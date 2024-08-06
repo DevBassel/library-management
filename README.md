@@ -18,6 +18,12 @@ pnpm install
 pnpm start:dev
 ```
 
+## run test 
+
+``` bash
+pnpm test
+```
+
 ## swagger doc 
 ``` bash
 http://localhost:4000/api
