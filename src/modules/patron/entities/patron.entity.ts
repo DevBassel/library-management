@@ -18,7 +18,7 @@ export class Patron {
   phone: string;
 
   @CreateDateColumn()
-  createdAd: Date;
+  createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
