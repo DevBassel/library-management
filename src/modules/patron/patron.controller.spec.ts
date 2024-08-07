@@ -69,7 +69,7 @@ describe('PatronController', () => {
   });
 
   describe('findAll', () => {
-    it('should return pagination of all books', async () => {
+    it('should return pagination of all Patron', async () => {
       jest.spyOn(service, 'findAll').mockResolvedValue(mockAllPatron);
 
       expect(await controller.findAll(1, 10)).toEqual(mockAllPatron);

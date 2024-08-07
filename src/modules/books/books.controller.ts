@@ -6,6 +6,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
@@ -15,10 +16,12 @@ import { Roles } from 'src/decorator/role.decorator';
 import { Role } from 'src/decorator/enums/role.enum';
 import { JwtGuard } from '../auth/guards/jwt.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 @UseGuards(JwtGuard, RoleGuard)
 @ApiTags('Books')
 @ApiBearerAuth()
+@UseInterceptors(CacheInterceptor)
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
